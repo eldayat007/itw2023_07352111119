@@ -1,0 +1,35 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url(background.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+
+}
+h1{
+    font-family:Comic Sans MS ;
+    font-size: 60px;
+    color: darkblue;
+    text-align: center;
+}
+h4{
+    font-style: italic;
+    text-align: center;
+}
+h3{text-align: center;}
+h3 a{color: red;}
+
+.paragraf1{
+    color: rgb(225, 133, 20);
+    text-align: center;
+}
+.paragraf2{
+    line-height: 25px;
+}
+p a{
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+}
+p{
+    text-align: right;
+}
