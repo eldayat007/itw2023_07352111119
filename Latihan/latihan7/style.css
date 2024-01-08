@@ -1,0 +1,288 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #2f456a;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 50px;
+}
+
+/* Container */
+.container {
+    display: grid;
+    gap: 10px;
+}
+
+/* Header */
+.header {
+    background-color: #000000;
+    border-radius: 8px;
+    display: grid;
+    grid-template-areas:
+        'hero hero feature-1'
+        'hero hero feature-2';
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 350px;
+    background-image: url(img/feature-eksposed.jpg);
+    background-size: cover;
+    background-position: bottom; 
+    padding: 50px;
+    border-radius: 8px;
+}
+
+.hero>* {
+    display: none;
+}
+
+.features {
+    background-color: #000000;
+    color: white;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image: url(img/nas-goreng-seafood.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(img/nasi-capcay.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.features .item {
+    font-weight: 600;
+}
+
+.features .price {
+    font-size: 30px;
+    font-weight: 200;
+}
+
+/* Navigation */
+.menu {
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.menu .brand {
+    font-size: 30px;
+    color: #000000;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.menu a {
+    display: block;
+    background-color: #427e9a;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.menu a:hover{
+    color: #2f456a;
+    transition: all .5s ease;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #000000;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    background-color: rgb(0, 0, 0);
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    background-color: rgb(0, 0, 0);
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background-color: rgb(219, 219, 219);
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #2f456a;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.service .icon {
+    font-size: 3em;
+}
+
+.service h3 {
+    font-size: 1.5em;
+}
+
+.service p {
+    font-weight: 200;
+    font-size: 0.8em;
+}
+
+/* Gallery */
+.gallery {
+    background-color: #2f456a;
+    border-radius: 8px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+}
+
+.gallery h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* membuat bagian responsive */
+@media (max-width: 1024px) {
+    .menu {
+        order: inherit;
+        grid-template-columns: 1fr;
+    }
+
+    .menu .brand {
+        display: none;
+    }
+
+    .hero>* {
+        display: block;
+        background-color: #00000083;
+        color: white;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 8px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        order: -1;
+        justify-items: end;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu ul {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: #162d56e4;
+        z-index: 2;
+        transform: translateY(-100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 15px;
+    }
+
+    .header {
+        grid-template-areas:
+            'hero'
+            'feature-1'
+            'feature-2';
+    }
+}

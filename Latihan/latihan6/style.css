@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+nav{
+    display: flex;
+    background-color: rgb(37, 60, 110);
+    justify-content: space-around;
+    padding: 10px 0;
+    color: rgb(232, 232, 232);
+    height: 80px;
+    align-items: center;
+}
+
+nav .logo{
+    font-family: 'Lobster', serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+    text-align: center;
+    font-family: 'Quicksand', serif;
+    font-size: 20px;
+}
+
+nav ul li a{
+    color: rgb(232, 232, 232);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav ul li a:hover{
+    color: rgb(37, 60, 110);
+    padding: 8px 15px;
+    background-color: rgb(42, 151, 165);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all .4s ease;
+}
+
+.menu-side{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-side input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-side span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.5s;
+}
+
+/* humberger */
+.menu-side span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-side span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-side input:checked ~ span:nth-child(2){
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-side input:checked ~ span:nth-child(4){
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-side input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+/* membuat tampilan reponsif */
+
+@media screen and (max-width: 768px) {
+    nav ul{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-side{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color:  rgb(37, 60, 110);
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s ease;
+        opacity: 0;
+    }
+
+    nav ul.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

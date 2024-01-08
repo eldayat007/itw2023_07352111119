@@ -1,0 +1,270 @@
+/* RESET CSS */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* style utama */
+
+body {
+    font: 16px/28px arial, sans-serif;
+    background-color: #eaeaea;
+    color: #000000;
+}
+
+.container {
+    width: 1000px;
+    margin: auto;
+    background-color: #dadada;
+
+}
+
+
+.header {
+    background-color: #dadada;
+    width: 1000px;
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: auto;
+}
+
+.header .nav {
+    margin-top: 5px;
+    background-color: rgb(63, 90, 130);
+    padding: 10px;
+    text-align: center;
+}
+
+.header .title {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px;
+    color: rgb(45, 69, 105);
+}
+
+.header ul li {
+    display: inline-block;
+}
+
+.header a {
+    padding: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.header a:hover {
+    background-color:  rgb(63, 90, 130);
+    color:  rgb(201, 213, 231);
+}
+
+.hero {
+    height: 400px;
+    background-image: url(img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    padding: 20px;
+}
+
+.first {
+    margin-top: 120px;
+}
+
+.content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.content .writer {
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+
+.content .writer a {
+    color: rgb(32, 47, 132);
+    text-decoration: none;
+}
+
+
+.content p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.content h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.content p span {
+    color: rgb(32, 47, 132);
+}
+
+.content img {
+    width: 700px;
+    margin: 20px 0px;
+    border-radius: 10px;
+}
+
+.footer {
+    background-color:  rgb(63, 90, 130);
+    padding: 10px;
+}
+
+.footer .copy {
+    color: #eaeaea;
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer .copy a {
+    text-decoration: none;
+    color: white;
+}
+
+.gear3 {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
